@@ -6,3 +6,5 @@
 #define PFTP_CONNECT_H
 
 #endif //PFTP_CONNECT_H
+
+int tryconnect(user_info user, host_info host);
