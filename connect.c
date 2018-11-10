@@ -56,12 +56,13 @@ int tryconnect(user_info user, host_info host)
         error("Internal error");
     }
 
+
     //Prepare buffer should not write here
     //It is transfer logic
     // char buffer[256];
     // bzero(buffer, 256);
 
     //When we got here, it means sockfd is availale
-    //then sockfd should return in order to use in transfer
+    //then sockfd should return in order to use in cmd
     return sockfd;
 }
