@@ -15,11 +15,16 @@
 #include "analyze.h"
 #include "connect.h"
 
+int error(char *msg)
+{
+    printf("%s\n", msg);
+    return 0;
+}
+
 int tryconnect(user_info user, host_info host)
 {
-    // portno = atoi(argv[2]);
     // Check First, declare all values is not necessary
-    int portno = atoi(host.port);
+    int portno = host.port;
     if (portno <= 0 || portno > UINT16_MAX)
     {
         error("invalid or missing options\nusage: snc [-l] [-u] [hostname] port\n");
@@ -38,24 +43,17 @@ int tryconnect(user_info user, host_info host)
         error("Internal error");
     }
     //Prepare addr
-    // struct sockaddr_in serv_addr, client_addr;
-    // client_addr not necessary here
     struct sockaddr_in serv_addr;
     bzero((char *)&serv_addr, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
-    bcopy((char *)server->h_addr,
-          (char *)&serv_addr.sin_addr.s_addr,
-          server->h_length);
+    serv_addr.sin_addr.s_addr = INADDR_ANY;
     serv_addr.sin_port = htons(portno);
 
-    //Then we got sockfd & server
-    //Try Connect
     int connect_result = connect(sockfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
     if (connect_result < 0)
     {
-        error("Internal error");
+        error("Can't connect to server\n");
     }
-
 
     //Prepare buffer should not write here
     //It is transfer logic
@@ -63,6 +61,6 @@ int tryconnect(user_info user, host_info host)
     // bzero(buffer, 256);
 
     //When we got here, it means sockfd is availale
-    //then sockfd should return in order to use in cmd
+    //then sockfd should return in order to use in transfer
     return sockfd;
 }

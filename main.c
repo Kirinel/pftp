@@ -8,13 +8,8 @@
 
 #include "analyze.h"
 #include "connect.h"
-//change
 
-int error(char *msg)
-{
-    printf("%s\n", msg);
-    exit(0);
-}
+
 
 int main(int argc, char *argv[])
 {
@@ -31,6 +26,7 @@ int main(int argc, char *argv[])
     {
         error("Try connect to get sockfd error");
     }
+
     //Transfer
     //Here should some function like
     // int transfer_result =transferfile(int sockfd, someStruct file_information)
@@ -40,6 +36,7 @@ int main(int argc, char *argv[])
     //      2. when you use pftp -s serverdomain/gun -f /ProgramIndex, ProgramIndex is the filename in struct
     //      3. after execute2 , file should transfer to location in your computer, is the second info in struct
     int transfer_result;
+    //change
     if (transfer_result < 0)
     {
         error("Transfer file error");

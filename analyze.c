@@ -1,6 +1,8 @@
 #include "analyze.h"
 #include <stdio.h>
 #include <getopt.h>
+#include <stdlib.h>
+#include <string.h>
 
 char* const short_options = "s:f:hvp:n:P:m:l:";
 struct option long_options[] = {
@@ -34,6 +36,7 @@ int analyzeparameter(int argc, char *argv[], user_info *user, host_info *host)
         {
         case 's':
             hostname = optarg;
+            strcpy(host->name, hostname);
             printf("hostname: %s\n", hostname);
             break;
         case 'f':
@@ -48,14 +51,17 @@ int analyzeparameter(int argc, char *argv[], user_info *user, host_info *host)
             break;
         case 'p':
             portnum = atoi(optarg);
+            host->port = portnum;
             printf("portnumber: %d\n", portnum);
             break;
         case 'n':
             username = optarg;
+            strcpy(user->username, username);
             printf("username: %s\n", username);
             break;
         case 'P':
             password = optarg;
+            strcpy(user->password, password);
             printf("password: %s\n", password);
             break;
         case 'm':
@@ -65,8 +71,12 @@ int analyzeparameter(int argc, char *argv[], user_info *user, host_info *host)
         case 'l':
             logfile = optarg;
             printf("logfile: %s\n", logfile);
+            strcpy(user->logfile, logfile);
             break;
         }
     }
+    user->portno = portnum;
+    if(!strcmp(mode, "A")) user->mode = 1; //mode = ASCII
+    else user->mode = 0;
     return 0;
 }

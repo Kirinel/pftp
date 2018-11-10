@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/yanchuanqi/ClionProjects/pftp
+CMAKE_SOURCE_DIR = /Users/yanchuanqi/ClionProjects/pftp-master
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/yanchuanqi/ClionProjects/pftp/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yanchuanqi/ClionProjects/pftp/cmake-build-debug/CMakeFiles /Users/yanchuanqi/ClionProjects/pftp/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles /Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yanchuanqi/ClionProjects/pftp/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,33 @@ pftp: cmake_check_build_system
 pftp/fast:
 	$(MAKE) -f CMakeFiles/pftp.dir/build.make CMakeFiles/pftp.dir/build
 .PHONY : pftp/fast
+
+analyze.o: analyze.c.o
+
+.PHONY : analyze.o
+
+# target to build an object file
+analyze.c.o:
+	$(MAKE) -f CMakeFiles/pftp.dir/build.make CMakeFiles/pftp.dir/analyze.c.o
+.PHONY : analyze.c.o
+
+analyze.i: analyze.c.i
+
+.PHONY : analyze.i
+
+# target to preprocess a source file
+analyze.c.i:
+	$(MAKE) -f CMakeFiles/pftp.dir/build.make CMakeFiles/pftp.dir/analyze.c.i
+.PHONY : analyze.c.i
+
+analyze.s: analyze.c.s
+
+.PHONY : analyze.s
+
+# target to generate assembly for a file
+analyze.c.s:
+	$(MAKE) -f CMakeFiles/pftp.dir/build.make CMakeFiles/pftp.dir/analyze.c.s
+.PHONY : analyze.c.s
 
 connect.o: connect.c.o
 
@@ -213,6 +240,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... pftp"
+	@echo "... analyze.o"
+	@echo "... analyze.i"
+	@echo "... analyze.s"
 	@echo "... connect.o"
 	@echo "... connect.i"
 	@echo "... connect.s"

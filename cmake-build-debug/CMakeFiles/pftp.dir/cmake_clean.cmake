@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/pftp.dir/main.c.o"
+  "CMakeFiles/pftp.dir/analyze.c.o"
   "CMakeFiles/pftp.dir/connect.c.o"
   "CMakeFiles/pftp.dir/transfer.c.o"
   "pftp.pdb"

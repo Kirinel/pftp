@@ -1,3 +1,3 @@
-/Users/yanchuanqi/ClionProjects/pftp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/yanchuanqi/ClionProjects/pftp/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/yanchuanqi/ClionProjects/pftp/cmake-build-debug/CMakeFiles/pftp.dir
+/Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles/pftp.dir
