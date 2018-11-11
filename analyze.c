@@ -35,9 +35,11 @@ int analyzeparameter(int argc, char *argv[], user_info *user, host_info *host)
         switch (c)
         {
         case 's':
-            hostname = optarg;
-            strcpy(host->name, hostname);
-            printf("hostname: %s\n", hostname);
+            //TODO : hostname var is not necessary
+            host->name = optarg;
+//            hostname = optarg;
+//            strcpy(host->name, hostname);
+            printf("hostname: %s\n",host->name);
             break;
         case 'f':
             filename = optarg;
@@ -65,7 +67,8 @@ int analyzeparameter(int argc, char *argv[], user_info *user, host_info *host)
             printf("password: %s\n", password);
             break;
         case 'm':
-            mode = optarg;
+            user->mode = strcmp(optarg, "A") ? 1 : 0;
+//            mode = optarg;
             printf("mode: %s\n", mode);
             break;
         case 'l':
@@ -75,8 +78,14 @@ int analyzeparameter(int argc, char *argv[], user_info *user, host_info *host)
             break;
         }
     }
-    user->portno = portnum;
-    if(!strcmp(mode, "A")) user->mode = 1; //mode = ASCII
-    else user->mode = 0;
+    //TODO : use wrong port
+    //wrong! port 21 is using on server, not client
+//    user->portno = portnum;
+    host->port = portnum;
+    //Do not use if..else like this!
+    //use triple operator or append {}
+    //And this cause your code crash , because the mode may be NULL
+//    if(!strcmp(mode, "A")) user->mode = 1; //mode = ASCII
+//    else user->mode = 0;
     return 0;
 }

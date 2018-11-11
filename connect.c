@@ -64,3 +64,30 @@ int tryconnect(user_info user, host_info host)
     //then sockfd should return in order to use in transfer
     return sockfd;
 }
+
+int commandsend(int sockfd)
+{
+    //Buffer for receive
+    char buffer[1024];
+    //Request
+    char *req = NULL;
+    size_t size;
+    //Loop
+    while (req == NULL || strcmp(req, "EOF\n") != 0) {
+        //Receive first after connect
+        ssize_t recv_result = recv(sockfd, buffer, 1024, 0);
+        if(recv_result >= 0) {
+            printf("Res Message:\n %.*s", (int)recv_result, buffer);
+        }
+        //Send command
+        printf("Command: \n");
+        getline(&req, &size, stdin);
+        ssize_t send_result = send(sockfd, req, strlen(req), 0);
+        if (send_result >= 0) {
+            printf("Req Message:\n%s", req);
+        }
+    }
+    free(req);
+    free(buffer);
+    return 0;
+}

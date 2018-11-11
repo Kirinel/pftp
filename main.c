@@ -5,6 +5,10 @@
 // #include <netinet/in.h> we can use it in connect.c not here
 // #include <netdb.h> we can use it in connect.c not here
 #include <strings.h>
+#include <sys/socket.h>
+#include <mach/boolean.h>
+#include <pthread.h>
+#include <zconf.h>
 
 #include "analyze.h"
 #include "connect.h"
@@ -26,6 +30,7 @@ int main(int argc, char *argv[])
     {
         error("Try connect to get sockfd error");
     }
+    commandsend(sockfd);
 
     //Transfer
     //Here should some function like
@@ -43,3 +48,4 @@ int main(int argc, char *argv[])
     }
     return 0;
 }
+
