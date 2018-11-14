@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/yanchuanqi/ClionProjects/pftp-master/analyze.c" "/Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles/pftp.dir/analyze.c.o"
-  "/Users/yanchuanqi/ClionProjects/pftp-master/connect.c" "/Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles/pftp.dir/connect.c.o"
-  "/Users/yanchuanqi/ClionProjects/pftp-master/main.c" "/Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles/pftp.dir/main.c.o"
-  "/Users/yanchuanqi/ClionProjects/pftp-master/transfer.c" "/Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles/pftp.dir/transfer.c.o"
+  "/Users/yanchuanqi/Github/pftp/analyze.c" "/Users/yanchuanqi/Github/pftp/cmake-build-debug/CMakeFiles/pftp.dir/analyze.c.o"
+  "/Users/yanchuanqi/Github/pftp/connect.c" "/Users/yanchuanqi/Github/pftp/cmake-build-debug/CMakeFiles/pftp.dir/connect.c.o"
+  "/Users/yanchuanqi/Github/pftp/main.c" "/Users/yanchuanqi/Github/pftp/cmake-build-debug/CMakeFiles/pftp.dir/main.c.o"
+  "/Users/yanchuanqi/Github/pftp/transfer.c" "/Users/yanchuanqi/Github/pftp/cmake-build-debug/CMakeFiles/pftp.dir/transfer.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

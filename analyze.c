@@ -36,10 +36,13 @@ int analyzeparameter(int argc, char *argv[], user_info *user, host_info *host)
         {
         case 's':
             //TODO : hostname var is not necessary
-            host->name = optarg;
-//            hostname = optarg;
+//            host->name = optarg;
+            printf("optarg:*%s*\n", optarg);
 //            strcpy(host->name, hostname);
+//            strcpy(host->name, optarg);
+            host->name = optarg;
             printf("hostname: %s\n",host->name);
+
             break;
         case 'f':
             filename = optarg;

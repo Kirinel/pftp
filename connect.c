@@ -21,39 +21,27 @@ int error(char *msg)
     return 0;
 }
 
-int tryconnect(user_info user, host_info host)
+int tryconnect(user_info *user, host_info *host)
 {
-    // Check First, declare all values is not necessary
-    int portno = host.port;
-    if (portno <= 0 || portno > UINT16_MAX)
-    {
-        error("invalid or missing options\nusage: snc [-l] [-u] [hostname] port\n");
-    }
-    // int sockfd, n;
-    //Create Socket
-    int sockfd = socket(AF_INET, SOCK_STREAM, 0);
-    if (sockfd < 0)
-    {
-        error("Internal error");
-    }
-    //Create Server
-    struct hostent *server = gethostbyname(host.name);
-    if (server == NULL)
-    {
-        error("Internal error");
-    }
-    //Prepare addr
+    int sockfd;
+    struct hostent* server;
     struct sockaddr_in serv_addr;
-    bzero((char *)&serv_addr, sizeof(serv_addr));
-    serv_addr.sin_family = AF_INET;
-    serv_addr.sin_addr.s_addr = INADDR_ANY;
-    serv_addr.sin_port = htons(portno);
-
-    int connect_result = connect(sockfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
-    if (connect_result < 0)
-    {
-        error("Can't connect to server\n");
+    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    if (sockfd < 0)
+        error("ERROR opening socket");
+    server = gethostbyname(host->name);
+    if (server == NULL) {
+        fprintf(stderr,"ERROR, no such host\n");
+        exit(0);
     }
+    bzero((char *) &serv_addr, sizeof(serv_addr));
+    serv_addr.sin_family = AF_INET;
+    bcopy((char *)server->h_addr,
+          (char *)&serv_addr.sin_addr.s_addr,
+          server->h_length);
+    serv_addr.sin_port = htons(host->port);
+    if (connect(sockfd,(struct sockaddr *)&serv_addr,sizeof(serv_addr)) < 0)
+        error("ERROR connecting");
 
     //Prepare buffer should not write here
     //It is transfer logic

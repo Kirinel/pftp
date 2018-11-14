@@ -6,9 +6,10 @@
 // #include <netdb.h> we can use it in connect.c not here
 #include <strings.h>
 #include <sys/socket.h>
-#include <mach/boolean.h>
+//#include <mach/boolean.h>
 #include <pthread.h>
-#include <zconf.h>
+//#include <zconf.h>
+#include <netdb.h>
 
 #include "analyze.h"
 #include "connect.h"
@@ -18,14 +19,16 @@
 int main(int argc, char *argv[])
 {
     //Parameter
-    user_info user;
-    host_info host;
-    if (analyzeparameter(argc, argv, &user, &host))
+    user_info *user = (user_info*)malloc(sizeof(user_info));
+    host_info *host = (host_info*)malloc(sizeof(host_info));
+    if (analyzeparameter(argc, argv, user, host))
     {
         error("Analyze parameter error");
     }
     //Connection:
     int sockfd = tryconnect(user, host);
+
+
     if (sockfd < 0)
     {
         error("Try connect to get sockfd error");

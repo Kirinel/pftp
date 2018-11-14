@@ -7,6 +7,6 @@
 
 #endif //PFTP_CONNECT_H
 
-int tryconnect(user_info user, host_info host);
+int tryconnect(user_info *user, host_info *host);
 int commandsend(int sockfd);
 int error(char *msg);

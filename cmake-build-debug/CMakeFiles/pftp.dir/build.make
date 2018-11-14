@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/yanchuanqi/ClionProjects/pftp-master
+CMAKE_SOURCE_DIR = /Users/yanchuanqi/Github/pftp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/yanchuanqi/Github/pftp/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/pftp.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/pftp.dir/flags.make
 
 CMakeFiles/pftp.dir/main.c.o: CMakeFiles/pftp.dir/flags.make
 CMakeFiles/pftp.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/pftp.dir/main.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pftp.dir/main.c.o   -c /Users/yanchuanqi/ClionProjects/pftp-master/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yanchuanqi/Github/pftp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/pftp.dir/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pftp.dir/main.c.o   -c /Users/yanchuanqi/Github/pftp/main.c
 
 CMakeFiles/pftp.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pftp.dir/main.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yanchuanqi/ClionProjects/pftp-master/main.c > CMakeFiles/pftp.dir/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yanchuanqi/Github/pftp/main.c > CMakeFiles/pftp.dir/main.c.i
 
 CMakeFiles/pftp.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pftp.dir/main.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yanchuanqi/ClionProjects/pftp-master/main.c -o CMakeFiles/pftp.dir/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yanchuanqi/Github/pftp/main.c -o CMakeFiles/pftp.dir/main.c.s
 
 CMakeFiles/pftp.dir/main.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/pftp.dir/main.c.o.provides.build: CMakeFiles/pftp.dir/main.c.o
 
 CMakeFiles/pftp.dir/analyze.c.o: CMakeFiles/pftp.dir/flags.make
 CMakeFiles/pftp.dir/analyze.c.o: ../analyze.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/pftp.dir/analyze.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pftp.dir/analyze.c.o   -c /Users/yanchuanqi/ClionProjects/pftp-master/analyze.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yanchuanqi/Github/pftp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/pftp.dir/analyze.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pftp.dir/analyze.c.o   -c /Users/yanchuanqi/Github/pftp/analyze.c
 
 CMakeFiles/pftp.dir/analyze.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pftp.dir/analyze.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yanchuanqi/ClionProjects/pftp-master/analyze.c > CMakeFiles/pftp.dir/analyze.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yanchuanqi/Github/pftp/analyze.c > CMakeFiles/pftp.dir/analyze.c.i
 
 CMakeFiles/pftp.dir/analyze.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pftp.dir/analyze.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yanchuanqi/ClionProjects/pftp-master/analyze.c -o CMakeFiles/pftp.dir/analyze.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yanchuanqi/Github/pftp/analyze.c -o CMakeFiles/pftp.dir/analyze.c.s
 
 CMakeFiles/pftp.dir/analyze.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/pftp.dir/analyze.c.o.provides.build: CMakeFiles/pftp.dir/analyze.c.o
 
 CMakeFiles/pftp.dir/connect.c.o: CMakeFiles/pftp.dir/flags.make
 CMakeFiles/pftp.dir/connect.c.o: ../connect.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/pftp.dir/connect.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pftp.dir/connect.c.o   -c /Users/yanchuanqi/ClionProjects/pftp-master/connect.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yanchuanqi/Github/pftp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/pftp.dir/connect.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pftp.dir/connect.c.o   -c /Users/yanchuanqi/Github/pftp/connect.c
 
 CMakeFiles/pftp.dir/connect.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pftp.dir/connect.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yanchuanqi/ClionProjects/pftp-master/connect.c > CMakeFiles/pftp.dir/connect.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yanchuanqi/Github/pftp/connect.c > CMakeFiles/pftp.dir/connect.c.i
 
 CMakeFiles/pftp.dir/connect.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pftp.dir/connect.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yanchuanqi/ClionProjects/pftp-master/connect.c -o CMakeFiles/pftp.dir/connect.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yanchuanqi/Github/pftp/connect.c -o CMakeFiles/pftp.dir/connect.c.s
 
 CMakeFiles/pftp.dir/connect.c.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/pftp.dir/connect.c.o.provides.build: CMakeFiles/pftp.dir/connect.c.o
 
 CMakeFiles/pftp.dir/transfer.c.o: CMakeFiles/pftp.dir/flags.make
 CMakeFiles/pftp.dir/transfer.c.o: ../transfer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/pftp.dir/transfer.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pftp.dir/transfer.c.o   -c /Users/yanchuanqi/ClionProjects/pftp-master/transfer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yanchuanqi/Github/pftp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/pftp.dir/transfer.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/pftp.dir/transfer.c.o   -c /Users/yanchuanqi/Github/pftp/transfer.c
 
 CMakeFiles/pftp.dir/transfer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pftp.dir/transfer.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yanchuanqi/ClionProjects/pftp-master/transfer.c > CMakeFiles/pftp.dir/transfer.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/yanchuanqi/Github/pftp/transfer.c > CMakeFiles/pftp.dir/transfer.c.i
 
 CMakeFiles/pftp.dir/transfer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pftp.dir/transfer.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yanchuanqi/ClionProjects/pftp-master/transfer.c -o CMakeFiles/pftp.dir/transfer.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/yanchuanqi/Github/pftp/transfer.c -o CMakeFiles/pftp.dir/transfer.c.s
 
 CMakeFiles/pftp.dir/transfer.c.o.requires:
 
@@ -169,7 +169,7 @@ pftp: CMakeFiles/pftp.dir/connect.c.o
 pftp: CMakeFiles/pftp.dir/transfer.c.o
 pftp: CMakeFiles/pftp.dir/build.make
 pftp: CMakeFiles/pftp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable pftp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yanchuanqi/Github/pftp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable pftp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pftp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -189,6 +189,6 @@ CMakeFiles/pftp.dir/clean:
 .PHONY : CMakeFiles/pftp.dir/clean
 
 CMakeFiles/pftp.dir/depend:
-	cd /Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/yanchuanqi/ClionProjects/pftp-master /Users/yanchuanqi/ClionProjects/pftp-master /Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug /Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug /Users/yanchuanqi/ClionProjects/pftp-master/cmake-build-debug/CMakeFiles/pftp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/yanchuanqi/Github/pftp/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/yanchuanqi/Github/pftp /Users/yanchuanqi/Github/pftp /Users/yanchuanqi/Github/pftp/cmake-build-debug /Users/yanchuanqi/Github/pftp/cmake-build-debug /Users/yanchuanqi/Github/pftp/cmake-build-debug/CMakeFiles/pftp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/pftp.dir/depend
 

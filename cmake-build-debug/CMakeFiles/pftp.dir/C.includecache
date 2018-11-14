@@ -6,17 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/Users/yanchuanqi/ClionProjects/pftp-master/analyze.c
+/Users/yanchuanqi/Github/pftp/analyze.c
 analyze.h
-/Users/yanchuanqi/ClionProjects/pftp-master/analyze.h
+/Users/yanchuanqi/Github/pftp/analyze.h
 stdio.h
 -
 getopt.h
 -
+stdlib.h
+-
+string.h
+-
 
-/Users/yanchuanqi/ClionProjects/pftp-master/analyze.h
+/Users/yanchuanqi/Github/pftp/analyze.h
 
-/Users/yanchuanqi/ClionProjects/pftp-master/connect.c
+/Users/yanchuanqi/Github/pftp/connect.c
 stdio.h
 -
 stdlib.h
@@ -28,27 +32,33 @@ netdb.h
 strings.h
 -
 analyze.h
-/Users/yanchuanqi/ClionProjects/pftp-master/analyze.h
+/Users/yanchuanqi/Github/pftp/analyze.h
 connect.h
-/Users/yanchuanqi/ClionProjects/pftp-master/connect.h
+/Users/yanchuanqi/Github/pftp/connect.h
 
-/Users/yanchuanqi/ClionProjects/pftp-master/connect.h
+/Users/yanchuanqi/Github/pftp/connect.h
 
-/Users/yanchuanqi/ClionProjects/pftp-master/main.c
+/Users/yanchuanqi/Github/pftp/main.c
 stdio.h
 -
 stdlib.h
 -
 strings.h
 -
+sys/socket.h
+-
+pthread.h
+-
+netdb.h
+-
 analyze.h
-/Users/yanchuanqi/ClionProjects/pftp-master/analyze.h
+/Users/yanchuanqi/Github/pftp/analyze.h
 connect.h
-/Users/yanchuanqi/ClionProjects/pftp-master/connect.h
+/Users/yanchuanqi/Github/pftp/connect.h
 
-/Users/yanchuanqi/ClionProjects/pftp-master/transfer.c
+/Users/yanchuanqi/Github/pftp/transfer.c
 transfer.h
-/Users/yanchuanqi/ClionProjects/pftp-master/transfer.h
+/Users/yanchuanqi/Github/pftp/transfer.h
 
-/Users/yanchuanqi/ClionProjects/pftp-master/transfer.h
+/Users/yanchuanqi/Github/pftp/transfer.h
 
