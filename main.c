@@ -25,27 +25,14 @@ int main(int argc, char *argv[])
     {
         error("Analyze parameter error");
     }
-    //Connection:
-    int sockfd = tryconnect(user, host);
-
-
-    if (sockfd < 0)
+    int ctrl_sockfd = ctrlSockConnect(user, host);
+    if (ctrl_sockfd < 0)
     {
         error("Try connect to get sockfd error");
     }
-    commandsend(sockfd);
+    int data_sockfd = dataSockConnect(user, host);
 
-    //Transfer
-    //Here should some function like
-    // int transfer_result =transferfile(int sockfd, someStruct file_information)
-    // then return result
-    // Hint:
-    //      1. fileInfo struct should contain : filename, the disk storage location
-    //      2. when you use pftp -s serverdomain/gun -f /ProgramIndex, ProgramIndex is the filename in struct
-    //      3. after execute2 , file should transfer to location in your computer, is the second info in struct
-    int transfer_result;
-    //change
-    if (transfer_result < 0)
+    if (data_sockfd < 0)
     {
         error("Transfer file error");
     }

@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-char* const short_options = "s:f:hvp:n:P:m:l:";
+char* const short_options = "s:f:hvp:n:P:l:";
 struct option long_options[] = {
         {"server", 1, NULL, 's'},
         {"file", 1, NULL, 'f' },
@@ -13,7 +13,6 @@ struct option long_options[] = {
         {"port", 1, NULL, 'p'},
         {"username", 1, NULL, 'n'},
         {"password", 1, NULL, 'P'},
-        {"mode", 1, NULL, 'm'},
         {"log", 1, NULL, 'l'},
         {NULL, 0, NULL, 0 }
 };
@@ -35,17 +34,12 @@ int analyzeparameter(int argc, char *argv[], user_info *user, host_info *host)
         switch (c)
         {
         case 's':
-            //TODO : hostname var is not necessary
-//            host->name = optarg;
-            printf("optarg:*%s*\n", optarg);
-//            strcpy(host->name, hostname);
-//            strcpy(host->name, optarg);
             host->name = optarg;
             printf("hostname: %s\n",host->name);
-
             break;
         case 'f':
             filename = optarg;
+            user->filename = optarg;
             printf("filename: %s\n", filename);
             break;
         case 'h':
@@ -60,24 +54,16 @@ int analyzeparameter(int argc, char *argv[], user_info *user, host_info *host)
             printf("portnumber: %d\n", portnum);
             break;
         case 'n':
-            username = optarg;
-            strcpy(user->username, username);
-            printf("username: %s\n", username);
+            user->username = optarg;
+            printf("username: %s\n", user->username);
             break;
         case 'P':
-            password = optarg;
-            strcpy(user->password, password);
-            printf("password: %s\n", password);
-            break;
-        case 'm':
-            user->mode = strcmp(optarg, "A") ? 1 : 0;
-//            mode = optarg;
-            printf("mode: %s\n", mode);
+            user->password = optarg;
+            printf("password: %s\n", user->password);
             break;
         case 'l':
-            logfile = optarg;
-            printf("logfile: %s\n", logfile);
-            strcpy(user->logfile, logfile);
+            user->logfile = optarg;
+            printf("logfile: %s\n", user->logfile);
             break;
         }
     }

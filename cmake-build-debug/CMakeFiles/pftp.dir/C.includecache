@@ -35,6 +35,14 @@ analyze.h
 /Users/yanchuanqi/Github/pftp/analyze.h
 connect.h
 /Users/yanchuanqi/Github/pftp/connect.h
+sys/types.h
+-
+sys/socket.h
+-
+unistd.h
+-
+fcntl.h
+-
 
 /Users/yanchuanqi/Github/pftp/connect.h
 
