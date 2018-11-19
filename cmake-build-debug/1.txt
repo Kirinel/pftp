@@ -1,0 +1,36 @@
+0: S->C: 220 Authorized Users Only
+0: C->S: USER cs23300
+0: S->C: 331 Please specify the password.
+0: C->S: PASS youcandoit
+0: S->C: 230 Login successful.
+0: C->S: PASV
+0: S->C: 227 Entering Passive Mode (128,135,164,127,80,132).
+0: C->S: TYPE I
+0: S->C: 200 Switching to Binary mode.
+0: C->S: SIZE rfc959.pdf
+0: S->C: 213 233602
+0: C->S: REST 0
+0: S->C: 350 Restart position accepted (0).
+0: C->S: RETR rfc959.pdf
+0: S->C: 150 Opening BINARY mode data connection for rfc959.pdf (233602 bytes).
+0: S->C: 226 Transfer complete.
+0: C->S: QUIT
+0: S->C: 221 Goodbye.
+1: S->C: 220 Authorized Users Only
+1: C->S: USER sockprogramming
+1: S->C: 331 Please specify the password.
+1: C->S: PASS rocks
+1: S->C: 230 Login successful.
+1: C->S: PASV
+1: S->C: 227 Entering Passive Mode (128,135,164,133,83,121).
+1: C->S: TYPE I
+1: S->C: 200 Switching to Binary mode.
+1: C->S: SIZE rfc959.pdf
+1: S->C: 213 233602
+1: C->S: REST 116801
+1: S->C: 350 Restart position accepted (116801).
+1: C->S: RETR rfc959.pdf
+1: S->C: 150 Opening BINARY mode data connection for rfc959.pdf (233602 bytes).
+1: S->C: 226 Transfer complete.
+1: C->S: QUIT
+1: S->C: 221 Goodbye.

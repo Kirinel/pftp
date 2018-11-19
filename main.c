@@ -1,15 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-// #include <transfer.h> here use wrong
-// #include <connect.h> here use wrong
-// #include <netinet/in.h> we can use it in connect.c not here
-// #include <netdb.h> we can use it in connect.c not here
 #include <strings.h>
 #include <sys/socket.h>
-//#include <mach/boolean.h>
 #include <pthread.h>
-//#include <zconf.h>
 #include <netdb.h>
+#include <unistd.h>
 
 #include "analyze.h"
 #include "connect.h"
@@ -18,24 +13,96 @@
 
 int main(int argc, char *argv[])
 {
-    //Parameter
-    user_info *user = (user_info*)malloc(sizeof(user_info));
-    host_info *host = (host_info*)malloc(sizeof(host_info));
-    if (analyzeparameter(argc, argv, user, host))
+    int parseflag = 0;
+    int para_argc = 0;
+    user_info *client = (user_info*)malloc(sizeof(user_info));
+    user_info *server = (user_info*)malloc(sizeof(user_info));
+    char* finalfile;
+    if (analyzeparameter(argc, argv, client, server, &parseflag))
     {
         error("Analyze parameter error");
     }
-    int ctrl_sockfd = ctrlSockConnect(user, host);
-    if (ctrl_sockfd < 0)
-    {
-        error("Try connect to get sockfd error");
+    if(parseflag) return 0;
+    if(client->parafile) {
+        FILE *parafile = fopen(client->parafile, "r");
+        if(!parafile) {
+            error("no parafile!");
+        }
+        char para_argv[32][128];
+        struct parg *pargs[128];
+        while (fscanf(parafile, "%s", para_argv[para_argc]) != EOF) {
+            pargs[para_argc] = (struct parg*)malloc(sizeof(struct parg));
+            pargs[para_argc]->client = (struct user_info*)malloc(sizeof(struct user_info));
+            pargs[para_argc]->server = (struct user_info*)malloc(sizeof(struct user_info));
+            pargs[para_argc]->server->port = 21;
+            if(client->logfile) {
+                pargs[para_argc]->client->logfile = (char*)malloc(128 * sizeof(char));
+                strcpy(pargs[para_argc]->client->logfile, client->logfile);
+            }
+            char *p = &para_argv[para_argc][6];
+            char *q = strchr(p, ':');
+            int i = 0;
+            while (p != q) {
+                pargs[para_argc]->client->name[i] = *p;
+                p++;
+                i++;
+            }
+            p++;
+            q = strchr(p, '@');
+            i = 0;
+            while (p != q) {
+                pargs[para_argc]->client->password[i] = *p;
+                p++;
+                i++;
+            }
+            p++;
+            q = strchr(p, '/');
+            i = 0;
+            while (p != q) {
+                pargs[para_argc]->server->name[i] = *p;
+                p++;
+                i++;
+            }
+            p++;
+            strcpy(pargs[para_argc]->client->filename, p);
+            strcpy(finalfile, p);
+            para_argc++;
+        }
+        pthread_t tids[128];
+        for(int i = 0; i < para_argc; i++) {
+            pargs[i]->argc = para_argc;
+            pargs[i]->num = i;
+            printf("before thread %d\n", i);
+            pthread_create(&tids[i], NULL, ftpconnect, (void *)pargs[i]);
+        }
+        for(int i = 0; i < para_argc; i++) {
+            pthread_join(tids[i], NULL);
+            printf("after thread %d\n", i);
+        }
+        FILE* final = fopen(finalfile, "a+");
+        FILE* temp;
+        char tempfile[128];
+        char c;
+        for(int i = 0; i < para_argc; i++) {
+            bzero(tempfile, sizeof(tempfile));
+            sprintf(tempfile, "temp_%d_%s", i, finalfile);
+            temp = fopen(tempfile, "r");
+            while (c = fgetc(temp) != EOF) {
+                fputc(c, final);
+            }
+        }
     }
-    int data_sockfd = dataSockConnect(user, host);
+    else {
+        struct parg *arg1 = (struct parg*)malloc(sizeof(struct parg));
+        arg1->client = client;
+        arg1->server = server;
+        arg1->server->port = 21;
+        arg1->argc = 1;
+        arg1->num = 0;
+        ftpconnect(arg1);
+    }
 
-    if (data_sockfd < 0)
-    {
-        error("Transfer file error");
-    }
+
     return 0;
 }
 

@@ -7,7 +7,7 @@
 
 #endif //PFTP_CONNECT_H
 
-int ctrlSockConnect(user_info *user, host_info *host);
-int dataSockConnect(user_info *user, host_info *host);
-int commandsend(int sockfd);
+void *ftpconnect(void* in);
+
+int closeConnect(user_info *user, user_info *host);
 int error(char *msg);

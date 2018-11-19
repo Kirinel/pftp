@@ -43,6 +43,8 @@ unistd.h
 -
 fcntl.h
 -
+pthread.h
+-
 
 /Users/yanchuanqi/Github/pftp/connect.h
 
@@ -58,6 +60,8 @@ sys/socket.h
 pthread.h
 -
 netdb.h
+-
+unistd.h
 -
 analyze.h
 /Users/yanchuanqi/Github/pftp/analyze.h

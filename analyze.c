@@ -4,8 +4,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-char* const short_options = "s:f:hvp:n:P:l:";
+char* const short_options = "t:s:f:hvp:n:P:l:";
 struct option long_options[] = {
+        {"thread", 1, NULL, 't'},
         {"server", 1, NULL, 's'},
         {"file", 1, NULL, 'f' },
         {"help", 0, NULL, 'h'},
@@ -18,63 +19,58 @@ struct option long_options[] = {
 };
 
 //return 0 is success
-int analyzeparameter(int argc, char *argv[], user_info *user, host_info *host)
+int analyzeparameter(int argc, char *argv[], user_info *client, user_info *server, int *flag)
 {
     int c;
-    char *hostname;
     char *filename;
     int portnum = 21;
-    char *username;
-    char *password;
-    char *mode;
-    char *logfile;
+    char *logfile = NULL;
+    char *parafile = NULL;
 
-    while ((c = getopt_long(argc, argv, short_options, long_options, NULL)) != -1)
-    {
-        switch (c)
-        {
-        case 's':
-            host->name = optarg;
-            printf("hostname: %s\n",host->name);
-            break;
-        case 'f':
-            filename = optarg;
-            user->filename = optarg;
-            printf("filename: %s\n", filename);
-            break;
-        case 'h':
-            printf("help: blablabla\n");
-            break;
-        case 'v':
-            printf("version: 1.0.0\n");
-            break;
-        case 'p':
-            portnum = atoi(optarg);
-            host->port = portnum;
-            printf("portnumber: %d\n", portnum);
-            break;
-        case 'n':
-            user->username = optarg;
-            printf("username: %s\n", user->username);
-            break;
-        case 'P':
-            user->password = optarg;
-            printf("password: %s\n", user->password);
-            break;
-        case 'l':
-            user->logfile = optarg;
-            printf("logfile: %s\n", user->logfile);
-            break;
+    while ((c = getopt_long(argc, argv, short_options, long_options, NULL)) != -1) {
+        switch (c) {
+            case 't':
+                parafile = optarg;
+                printf("parafile: %s\n",parafile);
+                break;
+            case 's':
+                strcpy(server->name, optarg);
+                printf("hostname: %s\n",server->name);
+                break;
+            case 'f':
+                filename = optarg;
+                strcpy(client->filename, optarg);
+                printf("filename: %s\n", filename);
+                break;
+            case 'h':
+                printf("help: blablabla\n");
+                *flag = 1;
+                break;
+            case 'v':
+                printf("version: 1.0.0\n");
+                *flag = 1;
+                break;
+            case 'p':
+                portnum = atoi(optarg);
+                server->port = portnum;
+                printf("portnumber: %d\n", portnum);
+                break;
+            case 'n':
+                strcpy(client->name, optarg);
+                printf("username: %s\n", client->name);
+                break;
+            case 'P':
+                strcpy(client->password, optarg);
+                printf("password: %s\n", client->password);
+                break;
+            case 'l':
+                logfile = optarg;
+                printf("logfile: %s\n", logfile);
+                break;
         }
     }
-    //TODO : use wrong port
-    //wrong! port 21 is using on server, not client
-//    user->portno = portnum;
-    host->port = portnum;
-    //Do not use if..else like this!
-    //use triple operator or append {}
-    //And this cause your code crash , because the mode may be NULL
-//    if(!strcmp(mode, "A")) user->mode = 1; //mode = ASCII
-//    else user->mode = 0;
+    server->port = portnum;
+    client->logfile = logfile;
+    client->parafile = parafile;
     return 0;
 }
