@@ -19,6 +19,8 @@ string.h
 -
 
 /Users/yanchuanqi/Github/pftp/analyze.h
+ntsid.h
+-
 
 /Users/yanchuanqi/Github/pftp/connect.c
 stdio.h

@@ -1,4 +1,7 @@
 
+#include <ntsid.h>
+//#include <pthread.h>
+
 typedef struct user_info {
     char name[128];
     char password[128];
@@ -16,6 +19,7 @@ typedef struct parg {
     user_info *server;
     int argc;
     int num;
+    pthread_mutex_t *mutex;
 } parg;
 
 

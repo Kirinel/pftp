@@ -9,5 +9,4 @@
 
 void *ftpconnect(void* in);
 
-int closeConnect(user_info *user, user_info *host);
 int error(char *msg);
