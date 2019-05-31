@@ -1,0 +1,8 @@
+
+
+# ignore the directory only use by yourself!!!!
+.idea*
+cmake-build-debug/
+*.txt
+log*
+*.pdf
